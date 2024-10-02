@@ -1,6 +1,6 @@
 import { notNullish } from '@antfu/utils'
-import { parseGitCommit } from 'changelogen'
-import type { GitCommit, RawGitCommit } from 'changelogen'
+import { parseGitCommit } from '@stephenhebert/changelogen'
+import type { GitCommit, RawGitCommit } from '@stephenhebert/changelogen'
 import type { ChangelogenOptions } from './types'
 
 export function parseCommits(commits: RawGitCommit[], config: ChangelogenOptions): GitCommit[] {

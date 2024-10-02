@@ -25,6 +25,7 @@ cli
   .option('--emoji', 'Use emojis in section titles', { default: true })
   .option('--group', 'Nest commit messages under their scopes')
   .option('--dry', 'Dry run')
+  .option('--includePaths <paths>', 'Include paths filter')
   .help()
 
 async function readTokenFromGitHubCli() {

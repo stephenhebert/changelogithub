@@ -1,5 +1,5 @@
 import { partition } from '@antfu/utils'
-import type { Reference } from 'changelogen'
+import type { Reference } from '@stephenhebert/changelogen'
 import { convert } from 'convert-gitmoji'
 import type { Commit, ResolvedChangelogOptions } from './types'
 

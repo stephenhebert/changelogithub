@@ -1,4 +1,4 @@
-import type { ChangelogConfig, GitCommit } from 'changelogen'
+import type { ChangelogConfig, GitCommit } from '@stephenhebert/changelogen'
 
 export type ChangelogenOptions = ChangelogConfig
 
@@ -74,6 +74,11 @@ export interface ChangelogOptions extends Partial<ChangelogenOptions> {
    * @default api.github.com
    */
   baseUrlApi?: string
+  /**
+   * Include paths filter
+   * @default []
+   */
+  includePaths?: string[]
 }
 
 export type ResolvedChangelogOptions = Required<ChangelogOptions>

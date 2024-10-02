@@ -18,6 +18,7 @@ const defaultConfig: ChangelogOptions = {
   contributors: true,
   capitalize: true,
   group: true,
+  includePaths: [],
 }
 
 export async function resolveConfig(options: ChangelogOptions) {
@@ -36,6 +37,9 @@ export async function resolveConfig(options: ChangelogOptions) {
   // @ts-expect-error backward compatibility
   config.repo = config.repo || config.github || await getGitHubRepo(config.baseUrl)
   config.prerelease = config.prerelease ?? isPrerelease(config.to)
+  config.includePaths = config.includePaths
+    ? (Array.isArray(config.includePaths) ? config.includePaths : config.includePaths.split(/(?<!\\) /))
+    : []
 
   if (typeof config.repo !== 'string')
     throw new Error(`Invalid GitHub repository, expected a string but got ${JSON.stringify(config.repo)}`)
